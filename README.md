@@ -14,7 +14,7 @@ Site acadêmico de Welber S. de Souza, hospedado no GitHub Pages. Mesmo template
 
 Abra `index.html` no próprio GitHub (ícone de lápis), altere o texto e clique em **Commit changes**. O site atualiza em 1 a 2 minutos.
 
-Trechos com fundo amarelo (`<span class="todo">`) ainda precisam ser completados: a foto do topo (retrato 4:5, descontraído), ORCID, fotos dos trabalhos e a seção Media.
+Trechos com fundo amarelo (`<span class="todo">`) ainda precisam ser completados: ORCID, fotos dos trabalhos e a seção Media.
 
 A cor de destaque fica na variável `--accent` no início do CSS.
 
