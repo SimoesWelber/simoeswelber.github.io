@@ -65,7 +65,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* ---- Hero ---- */
 .hero { padding: clamp(40px, 8vw, 96px) 0 clamp(32px, 6vw, 64px); }
-.hero .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
 .hero .wrap > * { min-width: 0; }
 .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 18px; }
 .hero .role { font-size: 20px; color: var(--muted); margin: 0 0 22px; max-width: 38ch; }
@@ -76,6 +76,8 @@ h1, h2, h3 { text-wrap: balance; }
 .links a.primary { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 .links a.primary:hover { color: var(--paper); filter: brightness(1.08); }
 
+.photo-hero { margin: 0; justify-self: end; width: min(100%, 420px); }
+.photo-hero img, .photo-hero .ph { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
 .figure-hero { margin: 0; }
 .figure-hero svg { width: 100%; height: auto; overflow: visible; }
 .figure-hero .skin { fill: var(--panel); stroke: var(--muted); stroke-width: 1.2; }
@@ -130,15 +132,11 @@ h1, h2, h3 { text-wrap: balance; }
 .project > * { min-width: 0; }
 .project:first-child { padding-top: 0; }
 .project:last-child { border-bottom: 0; padding-bottom: 0; }
+.project.feature { grid-template-columns: 1fr; gap: 20px; }
+.project.feature .figure-hero { max-width: 640px; }
 .project .meta { color: var(--muted); font-size: 15px; margin: 0 0 8px; }
 .project p { margin: 0; }
 .project p + p { margin-top: 10px; }
-.figure-box { aspect-ratio: 4 / 3; border-radius: 3px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; padding: 16px; }
-.figure-box svg { width: 100%; height: auto; }
-.figure-box .g { fill: none; stroke: var(--accent); stroke-width: 1; }
-.figure-box .g2 { fill: none; stroke: var(--accent); stroke-width: 1; opacity: .45; }
-.figure-box .f { fill: var(--accent); }
-.figure-box .t { font-family: var(--serif); font-style: italic; font-size: 10px; fill: var(--accent-ink); }
 
 /* Work: photo-first, like a portfolio */
 .work { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 36px 24px; }
@@ -175,7 +173,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: 1fr; }
-  .figure-hero { max-width: 560px; }
+  .photo-hero { justify-self: start; width: min(100%, 360px); order: -1; }
   .section .wrap { grid-template-columns: 1fr; }
   .section h2 { position: static; }
 }
@@ -185,7 +183,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   .about { grid-template-columns: 1fr; }
   .about .ph, .about img { order: -1; width: 140px; }
   .project { grid-template-columns: 1fr; gap: 14px; }
-  .project .figure-box, .project .ph { max-width: 320px; }
+  .project .ph { max-width: 320px; }
+  .project.feature .figure-hero { max-width: 100%; }
   .work { grid-template-columns: 1fr; gap: 28px; }
   .work li.lead .ph, .work li.lead img { aspect-ratio: 16 / 10; }
   .rows li { grid-template-columns: 1fr; gap: 2px; }
@@ -223,13 +222,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <li><a href="https://orcid.org/"><span class="todo">ORCID</span></a></li>
         </ul>
       </div>
-      <figure class="figure-hero">
-        <svg viewBox="0 0 600 260" role="img" aria-label="Left: a riveted aluminium panel discretised with a coarse linear-elastic finite element mesh; one element containing a rivet is highlighted. Right: zoom on that element, showing the rivet hole, the plastic zone of radius r_p around it and the radial displacement field that the special element passes to the global mesh."><rect class="skin" x="14" y="30" width="272" height="200" rx="3"/><path class="mesh" d="M48.0 30 V230 M82.0 30 V230 M116.0 30 V230 M150.0 30 V230 M184.0 30 V230 M218.0 30 V230 M252.0 30 V230 M14 63.3 H286 M14 96.7 H286 M14 130.0 H286 M14 163.3 H286 M14 196.7 H286"/><path class="lap" d="M14 96.7 H286 M14 163.3 H286"/><circle class="pz" cx="65.0" cy="130.0" r="14.0"/><circle class="hole" cx="65.0" cy="130.0" r="5.3"/><text class="lbl" x="65.0" y="111.7" text-anchor="middle">1</text><circle class="pz" cx="133.0" cy="130.0" r="14.0"/><circle class="hole" cx="133.0" cy="130.0" r="5.3"/><text class="lbl" x="133.0" y="111.7" text-anchor="middle">2</text><circle class="pz" cx="201.0" cy="130.0" r="14.0"/><circle class="hole" cx="201.0" cy="130.0" r="5.3"/><text class="lbl" x="201.0" y="111.7" text-anchor="middle">3</text><rect class="special" x="184.0" y="96.7" width="34.0" height="66.7"/><rect class="special zoom" x="348" y="18" width="224" height="224"/><path class="zl" d="M218.0 96.7 L348 18 M218.0 163.3 L348 242"/><circle class="pzr" cx="460" cy="130" r="22"/><circle class="pzr" cx="460" cy="130" r="27"/><circle class="pzr" cx="460" cy="130" r="33"/><circle class="pzr" cx="460" cy="130" r="40"/><circle class="pzr" cx="460" cy="130" r="48"/><circle class="pzr" cx="460" cy="130" r="58"/><circle class="elr" cx="460" cy="130" r="72"/><circle class="elr" cx="460" cy="130" r="90"/><circle class="elr" cx="460" cy="130" r="110"/><path class="rad" d="M478.0 130.0 L570.9 130.0"/><path class="rad" d="M476.9 136.2 L564.2 167.9"/><path class="rad" d="M473.8 141.6 L544.9 201.3"/><path class="rad" d="M469.0 145.6 L515.4 226.0"/><path class="rad" d="M463.1 147.7 L479.3 239.2"/><path class="rad" d="M456.9 147.7 L440.7 239.2"/><path class="rad" d="M451.0 145.6 L404.6 226.0"/><path class="rad" d="M446.2 141.6 L375.1 201.3"/><path class="rad" d="M443.1 136.2 L355.8 167.9"/><path class="rad" d="M442.0 130.0 L349.1 130.0"/><path class="rad" d="M443.1 123.8 L355.8 92.1"/><path class="rad" d="M446.2 118.4 L375.1 58.7"/><path class="rad" d="M451.0 114.4 L404.6 34.0"/><path class="rad" d="M456.9 112.3 L440.7 20.8"/><path class="rad" d="M463.1 112.3 L479.3 20.8"/><path class="rad" d="M469.0 114.4 L515.4 34.0"/><path class="rad" d="M473.8 118.4 L544.9 58.7"/><path class="rad" d="M476.9 123.8 L564.2 92.1"/><circle class="pzfill" cx="460" cy="130" r="58"/><circle class="holez" cx="460" cy="130" r="18"/><text class="lbl" x="460" y="134" text-anchor="middle">a</text><text class="lbl" x="502" y="90">r<tspan baseline-shift="sub" font-size="7">p</tspan></text><path class="arr" d="M480 130 H516 M510 126 l6 4 l-6 4"/></svg>
-        <ul class="scales">
-          <li><b>Global panel</b><span>Coarse, strictly linear-elastic mesh. One element per rivet is special.</span></li>
-          <li><b>Special element</b><span>Carries the closed-form plastic zone (radius r<sub>p</sub>) and its displacement field around the hole of radius a.</span></li>
-        </ul>
-        <figcaption>Schematic of my thesis: an analytical elasto-plastic solution for the hole expansion caused by a rivet is embedded in a plate element, which then hands the local plasticity to the global model as prescribed displacements.</figcaption>
+      <figure class="photo-hero">
+        <div class="ph portrait"><span class="todo">Photo: a relaxed, well-lit portrait (with the baby, face hidden, or at a diving event). About 1200 x 1500 px, under 300 KB.</span></div>
       </figure>
     </div>
   </section>
@@ -237,13 +231,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="section" id="about">
     <div class="wrap">
       <h2>About</h2>
-      <div class="body about">
+      <div class="body">
         <div>
           <p>I am an M.S. student in Aeronautical and Mechanical Engineering at ITA, advised by Prof. Alfredo Rocha de Faria. My thesis develops a semi-analytical finite element method for the plastic deformation that riveting induces in aeronautical panels, with the aim of predicting residual stresses and panel distortion at a fraction of the cost of a nonlinear analysis.</p>
           <p>I came to research from practice. Since 2013 I have worked at INGENIA, a São Paulo engineering firm where I am now a managing partner and technical director. I designed the elevated monorail stations of Metro Line 15-Silver, supervised the works of Line 17-Gold, and today I manage the independent technical verification of the Line 2-Green expansion, reviewing the structural calculations of stations, yards and deep foundations.</p>
           <p>I am applying to Ph.D. programs for Fall 2027. I am interested in computational mechanics for structures shaped by how they are made: manufacturing-induced plasticity, structural optimization under fabrication constraints, and the finite element methods that connect the two.</p>
         </div>
-        <div class="ph square"><span class="todo">Profile photo</span></div>
       </div>
     </div>
   </section>
@@ -252,22 +245,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap">
       <h2>Research</h2>
       <div class="body">
-        <article class="project">
-          <div class="figure-box" aria-hidden="true">
-            <svg viewBox="0 0 200 150">
-              <!-- stress vs radius sketch: hoop stress jump at r_p -->
-              <path class="g2" d="M24 126 H186 M24 126 V18"/>
-              <path class="g" d="M24 126 V40 H80"/>
-              <path class="g" d="M80 40 C100 40 120 60 186 86" stroke-dasharray="0"/>
-              <path class="g2" d="M80 40 V126" stroke-dasharray="3 3"/>
-              <circle class="f" cx="80" cy="40" r="2.6"/>
-              <text class="t" x="76" y="140">r<tspan font-size="7" baseline-shift="sub">p</tspan></text>
-              <text class="t" x="170" y="140">r</text>
-              <text class="t" x="8" y="22">σ</text>
-              <text class="t" x="110" y="36">plastic</text>
-              <text class="t" x="128" y="112">elastic</text>
-            </svg>
-          </div>
+        <article class="project feature">
+          <figure class="figure-hero">
+            <svg viewBox="0 0 600 260" role="img" aria-label="Left: a riveted aluminium panel discretised with a coarse linear-elastic finite element mesh; one element containing a rivet is highlighted. Right: zoom on that element, showing the rivet hole, the plastic zone of radius r_p around it and the radial displacement field that the special element passes to the global mesh."><rect class="skin" x="14" y="30" width="272" height="200" rx="3"/><path class="mesh" d="M48.0 30 V230 M82.0 30 V230 M116.0 30 V230 M150.0 30 V230 M184.0 30 V230 M218.0 30 V230 M252.0 30 V230 M14 63.3 H286 M14 96.7 H286 M14 130.0 H286 M14 163.3 H286 M14 196.7 H286"/><path class="lap" d="M14 96.7 H286 M14 163.3 H286"/><circle class="pz" cx="65.0" cy="130.0" r="14.0"/><circle class="hole" cx="65.0" cy="130.0" r="5.3"/><text class="lbl" x="65.0" y="111.7" text-anchor="middle">1</text><circle class="pz" cx="133.0" cy="130.0" r="14.0"/><circle class="hole" cx="133.0" cy="130.0" r="5.3"/><text class="lbl" x="133.0" y="111.7" text-anchor="middle">2</text><circle class="pz" cx="201.0" cy="130.0" r="14.0"/><circle class="hole" cx="201.0" cy="130.0" r="5.3"/><text class="lbl" x="201.0" y="111.7" text-anchor="middle">3</text><rect class="special" x="184.0" y="96.7" width="34.0" height="66.7"/><rect class="special zoom" x="348" y="18" width="224" height="224"/><path class="zl" d="M218.0 96.7 L348 18 M218.0 163.3 L348 242"/><circle class="pzr" cx="460" cy="130" r="22"/><circle class="pzr" cx="460" cy="130" r="27"/><circle class="pzr" cx="460" cy="130" r="33"/><circle class="pzr" cx="460" cy="130" r="40"/><circle class="pzr" cx="460" cy="130" r="48"/><circle class="pzr" cx="460" cy="130" r="58"/><circle class="elr" cx="460" cy="130" r="72"/><circle class="elr" cx="460" cy="130" r="90"/><circle class="elr" cx="460" cy="130" r="110"/><path class="rad" d="M478.0 130.0 L570.9 130.0"/><path class="rad" d="M476.9 136.2 L564.2 167.9"/><path class="rad" d="M473.8 141.6 L544.9 201.3"/><path class="rad" d="M469.0 145.6 L515.4 226.0"/><path class="rad" d="M463.1 147.7 L479.3 239.2"/><path class="rad" d="M456.9 147.7 L440.7 239.2"/><path class="rad" d="M451.0 145.6 L404.6 226.0"/><path class="rad" d="M446.2 141.6 L375.1 201.3"/><path class="rad" d="M443.1 136.2 L355.8 167.9"/><path class="rad" d="M442.0 130.0 L349.1 130.0"/><path class="rad" d="M443.1 123.8 L355.8 92.1"/><path class="rad" d="M446.2 118.4 L375.1 58.7"/><path class="rad" d="M451.0 114.4 L404.6 34.0"/><path class="rad" d="M456.9 112.3 L440.7 20.8"/><path class="rad" d="M463.1 112.3 L479.3 20.8"/><path class="rad" d="M469.0 114.4 L515.4 34.0"/><path class="rad" d="M473.8 118.4 L544.9 58.7"/><path class="rad" d="M476.9 123.8 L564.2 92.1"/><circle class="pzfill" cx="460" cy="130" r="58"/><circle class="holez" cx="460" cy="130" r="18"/><text class="lbl" x="460" y="134" text-anchor="middle">a</text><text class="lbl" x="502" y="90">r<tspan baseline-shift="sub" font-size="7">p</tspan></text><path class="arr" d="M480 130 H516 M510 126 l6 4 l-6 4"/></svg>
+            <ul class="scales">
+              <li><b>Global panel</b><span>Coarse, strictly linear-elastic mesh. One element per rivet is special.</span></li>
+              <li><b>Special element</b><span>Carries the closed-form plastic zone (radius r<sub>p</sub>) and its displacement field around the hole of radius a.</span></li>
+            </ul>
+            <figcaption>Schematic: an analytical elasto-plastic solution for the hole expansion caused by a rivet is embedded in a plate element, which hands the local plasticity to the global model as prescribed displacements.</figcaption>
+          </figure>
           <div>
             <h3>Semi-analytical finite element modeling of riveting-induced plasticity</h3>
             <p class="meta">M.S. thesis, ITA, 2025 to 2027. Advisor: Alfredo Rocha de Faria.</p>
