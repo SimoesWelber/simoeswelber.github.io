@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Welber S. de Souza</title>
+<meta name="description" content="Welber S. de Souza, structural engineer and M.S. student in aerospace structures at ITA, Brazil. Research on finite element modeling of manufacturing-induced plasticity; 13 years of design and verification on the São Paulo Metro.">
+<meta property="og:title" content="Welber S. de Souza">
+<meta property="og:description" content="Structural engineer and M.S. student at ITA. Finite element modeling of manufacturing-induced plasticity; São Paulo Metro infrastructure.">
+<meta property="og:url" content="https://welbersouza.com/">
+<link rel="canonical" href="https://welbersouza.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231f4f8f'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Personal academic site. Shares its template with daniellesimoes.com; the accent, the hero figure and the Work layout are specific to this site.
+   Layout: sticky name bar, hero with research figure, then label-left / content-right sections. */
+:root {
+  --accent: #1f4f8f;        /* structural steel blue */
+  --accent-soft: #e4ecf6;
+  --accent-ink: #163a69;
+  --ink: #1c2026;
+  --muted: #5d6673;
+  --rule: #dde2e8;
+  --paper: #ffffff;
+  --panel: #f3f5f8;
+  --todo-bg: #fff1a8;
+  --todo-fg: #1c2026;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --wrap: 1080px;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent: #8db7ec; --accent-soft: #1c2a3d; --accent-ink: #b7d2f5; --ink: #e6e9ee; --muted: #a3acb8;
+    --rule: #2c333d; --paper: #13161a; --panel: #1a1e24; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --accent: #8db7ec; --accent-soft: #1c2a3d; --accent-ink: #b7d2f5; --ink: #e6e9ee; --muted: #a3acb8;
+  --rule: #2c333d; --paper: #13161a; --panel: #1a1e24; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+h1, h2, h3 { text-wrap: balance; }
+.todo { background: var(--todo-bg); color: var(--todo-fg); padding: 0 3px; border-radius: 2px; }
+
+/* ---- Top bar ---- */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
+.brand { font-family: var(--serif); font-size: 21px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.nav { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 16px; white-space: nowrap; }
+.nav a:hover { color: var(--ink); }
+
+/* ---- Hero ---- */
+.hero { padding: clamp(40px, 8vw, 96px) 0 clamp(32px, 6vw, 64px); }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.hero .wrap > * { min-width: 0; }
+.hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 18px; }
+.hero .role { font-size: 20px; color: var(--muted); margin: 0 0 22px; max-width: 38ch; }
+.hero .statement { margin: 0 0 28px; max-width: 46ch; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.links a { display: inline-block; padding: 7px 14px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink); text-decoration: none; font-size: 16px; }
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+.links a.primary { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.links a.primary:hover { color: var(--paper); filter: brightness(1.08); }
+
+.figure-hero { margin: 0; }
+.figure-hero svg { width: 100%; height: auto; overflow: visible; }
+.figure-hero .skin { fill: var(--panel); stroke: var(--muted); stroke-width: 1.2; }
+.figure-hero .mesh { fill: none; stroke: var(--rule); stroke-width: 1; }
+.figure-hero .lap { fill: none; stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 4; }
+.figure-hero .pz { fill: var(--accent-soft); stroke: none; }
+.figure-hero .hole { fill: var(--paper); stroke: var(--ink); stroke-width: 1.2; }
+.figure-hero .special { fill: none; stroke: var(--accent); stroke-width: 1.6; }
+.figure-hero .special.zoom { stroke-width: 1.2; fill: var(--paper); }
+.figure-hero .zl { fill: none; stroke: var(--accent); stroke-width: 0.8; stroke-dasharray: 3 3; }
+.figure-hero .rad { fill: none; stroke: var(--rule); stroke-width: 0.8; }
+.figure-hero .elr { fill: none; stroke: var(--muted); stroke-width: 0.8; opacity: .7; }
+.figure-hero .pzr { fill: none; stroke: var(--accent); stroke-width: 1; }
+.figure-hero .pzfill { fill: var(--accent-soft); opacity: .55; }
+.figure-hero .holez { fill: var(--paper); stroke: var(--ink); stroke-width: 1.4; }
+.figure-hero .lbl { font-family: var(--serif); font-style: italic; font-size: 11px; fill: var(--ink); }
+.figure-hero .arr { fill: none; stroke: var(--ink); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+.figure-hero figcaption { font-size: 14px; color: var(--muted); margin-top: 12px; max-width: 58ch; line-height: 1.5; }
+.scales { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; line-height: 1.35; }
+.scales li { min-width: 0; }
+.scales b { display: block; font-family: var(--serif); font-weight: 500; font-size: 17px; color: var(--ink); }
+.scales span { color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .figure-hero .pzr, .figure-hero .elr { stroke-dasharray: 720; stroke-dashoffset: 720; animation: draw 1.8s ease-out .3s forwards; }
+  .figure-hero .pzfill { opacity: 0; animation: fill 1s ease-out 1.4s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fill { to { opacity: .55; } }
+}
+
+/* ---- Sections ---- */
+.section { border-top: 1px solid var(--rule); padding: clamp(40px, 6vw, 72px) 0; }
+.section .wrap { display: grid; grid-template-columns: 200px 1fr; gap: clamp(20px, 4vw, 48px); }
+.section .wrap > * { min-width: 0; }
+.section h2 { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.2; margin: 0; position: sticky; top: 84px; align-self: start; }
+.body > *:first-child { margin-top: 0; }
+.body p { max-width: 68ch; }
+.body h3 { font-size: 19px; font-weight: 600; margin: 0 0 4px; line-height: 1.35; }
+.body h4 { font-family: var(--serif); font-weight: 500; font-size: 20px; margin: 32px 0 10px; }
+.body h4:first-child { margin-top: 0; }
+
+.about { display: grid; grid-template-columns: 1fr 200px; gap: 32px; align-items: start; }
+.about > * { min-width: 0; }
+.about img { width: 200px; aspect-ratio: 1; object-fit: cover; border-radius: 3px; }
+
+/* Photo placeholders (replace each .ph with an <img>) */
+.ph { aspect-ratio: 4 / 3; max-width: 100%; border-radius: 3px; background: var(--panel); border: 1px dashed var(--rule); display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; font-size: 14px; color: var(--muted); }
+.ph.square { aspect-ratio: 1; width: 200px; }
+.ph.wide { aspect-ratio: 16 / 10; }
+
+/* Research entries */
+.project { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.project > * { min-width: 0; }
+.project:first-child { padding-top: 0; }
+.project:last-child { border-bottom: 0; padding-bottom: 0; }
+.project .meta { color: var(--muted); font-size: 15px; margin: 0 0 8px; }
+.project p { margin: 0; }
+.project p + p { margin-top: 10px; }
+.figure-box { aspect-ratio: 4 / 3; border-radius: 3px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.figure-box svg { width: 100%; height: auto; }
+.figure-box .g { fill: none; stroke: var(--accent); stroke-width: 1; }
+.figure-box .g2 { fill: none; stroke: var(--accent); stroke-width: 1; opacity: .45; }
+.figure-box .f { fill: var(--accent); }
+.figure-box .t { font-family: var(--serif); font-style: italic; font-size: 10px; fill: var(--accent-ink); }
+
+/* Work: photo-first, like a portfolio */
+.work { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 36px 24px; }
+.work li { min-width: 0; }
+.work li.lead { grid-column: 1 / -1; }
+.work li.lead .ph { aspect-ratio: 21 / 9; }
+.work figure { margin: 0; }
+.work img { aspect-ratio: 16 / 10; object-fit: cover; border-radius: 3px; width: 100%; }
+.work li.lead img { aspect-ratio: 21 / 9; }
+.work figcaption { margin-top: 12px; line-height: 1.45; }
+.work figcaption strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 21px; margin-bottom: 2px; }
+.work figcaption .role { color: var(--muted); font-size: 16px; display: block; }
+.work figcaption .desc { display: block; margin-top: 6px; font-size: 16px; max-width: 52ch; }
+.note { color: var(--muted); font-size: 15px; margin-top: 28px; }
+
+/* Lists */
+.refs { list-style: none; padding: 0; margin: 0; }
+.refs li { padding: 10px 0; border-bottom: 1px solid var(--rule); max-width: 72ch; }
+.refs li:last-child { border-bottom: 0; }
+.refs .me { font-weight: 600; }
+.refs .venue { font-style: italic; }
+.refs .tag { color: var(--muted); font-size: 15px; }
+.rows { list-style: none; padding: 0; margin: 0; }
+.rows li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.rows li > * { min-width: 0; }
+.rows li:last-child { border-bottom: 0; }
+.rows .when { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rows .sub { display: block; color: var(--muted); font-size: 16px; }
+.rows .sub-list { margin: 6px 0 0; padding-left: 18px; font-size: 16px; }
+.rows .sub-list li { display: list-item; padding: 2px 0; border: 0; }
+
+footer { border-top: 1px solid var(--rule); padding: 32px 0 48px; color: var(--muted); font-size: 15px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+@media (max-width: 900px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .figure-hero { max-width: 560px; }
+  .section .wrap { grid-template-columns: 1fr; }
+  .section h2 { position: static; }
+}
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  .brand { font-size: 19px; }
+  .about { grid-template-columns: 1fr; }
+  .about .ph, .about img { order: -1; width: 140px; }
+  .project { grid-template-columns: 1fr; gap: 14px; }
+  .project .figure-box, .project .ph { max-width: 320px; }
+  .work { grid-template-columns: 1fr; gap: 28px; }
+  .work li.lead .ph, .work li.lead img { aspect-ratio: 16 / 10; }
+  .rows li { grid-template-columns: 1fr; gap: 2px; }
+  .scales { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Welber S. de Souza</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#work">Work</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="Welber_Souza_CV.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Welber S. de&nbsp;Souza</h1>
+        <p class="role">Structural engineer and M.S. student in aerospace structures at the Aeronautics Institute of Technology (ITA), Brazil.</p>
+        <p class="statement">I study how manufacturing processes leave plasticity and residual stresses in structures, and I build finite element methods that capture these local effects without a full nonlinear analysis. Before ITA, I spent thirteen years designing and verifying the structures of the São Paulo Metro.</p>
+        <ul class="links">
+          <li><a class="primary" href="Welber_Souza_CV.pdf">Download CV</a></li>
+          <li><a href="mailto:welber@ita.br">welber@ita.br</a></li>
+          <li><a href="https://www.linkedin.com/in/welber-souza/">LinkedIn</a></li>
+          <li><a href="http://lattes.cnpq.br/2304589483073536">Lattes</a></li>
+          <li><a href="https://orcid.org/"><span class="todo">ORCID</span></a></li>
+        </ul>
+      </div>
+      <figure class="figure-hero">
+        <svg viewBox="0 0 600 260" role="img" aria-label="Left: a riveted aluminium panel discretised with a coarse linear-elastic finite element mesh; one element containing a rivet is highlighted. Right: zoom on that element, showing the rivet hole, the plastic zone of radius r_p around it and the radial displacement field that the special element passes to the global mesh."><rect class="skin" x="14" y="30" width="272" height="200" rx="3"/><path class="mesh" d="M48.0 30 V230 M82.0 30 V230 M116.0 30 V230 M150.0 30 V230 M184.0 30 V230 M218.0 30 V230 M252.0 30 V230 M14 63.3 H286 M14 96.7 H286 M14 130.0 H286 M14 163.3 H286 M14 196.7 H286"/><path class="lap" d="M14 96.7 H286 M14 163.3 H286"/><circle class="pz" cx="65.0" cy="130.0" r="14.0"/><circle class="hole" cx="65.0" cy="130.0" r="5.3"/><text class="lbl" x="65.0" y="111.7" text-anchor="middle">1</text><circle class="pz" cx="133.0" cy="130.0" r="14.0"/><circle class="hole" cx="133.0" cy="130.0" r="5.3"/><text class="lbl" x="133.0" y="111.7" text-anchor="middle">2</text><circle class="pz" cx="201.0" cy="130.0" r="14.0"/><circle class="hole" cx="201.0" cy="130.0" r="5.3"/><text class="lbl" x="201.0" y="111.7" text-anchor="middle">3</text><rect class="special" x="184.0" y="96.7" width="34.0" height="66.7"/><rect class="special zoom" x="348" y="18" width="224" height="224"/><path class="zl" d="M218.0 96.7 L348 18 M218.0 163.3 L348 242"/><circle class="pzr" cx="460" cy="130" r="22"/><circle class="pzr" cx="460" cy="130" r="27"/><circle class="pzr" cx="460" cy="130" r="33"/><circle class="pzr" cx="460" cy="130" r="40"/><circle class="pzr" cx="460" cy="130" r="48"/><circle class="pzr" cx="460" cy="130" r="58"/><circle class="elr" cx="460" cy="130" r="72"/><circle class="elr" cx="460" cy="130" r="90"/><circle class="elr" cx="460" cy="130" r="110"/><path class="rad" d="M478.0 130.0 L570.9 130.0"/><path class="rad" d="M476.9 136.2 L564.2 167.9"/><path class="rad" d="M473.8 141.6 L544.9 201.3"/><path class="rad" d="M469.0 145.6 L515.4 226.0"/><path class="rad" d="M463.1 147.7 L479.3 239.2"/><path class="rad" d="M456.9 147.7 L440.7 239.2"/><path class="rad" d="M451.0 145.6 L404.6 226.0"/><path class="rad" d="M446.2 141.6 L375.1 201.3"/><path class="rad" d="M443.1 136.2 L355.8 167.9"/><path class="rad" d="M442.0 130.0 L349.1 130.0"/><path class="rad" d="M443.1 123.8 L355.8 92.1"/><path class="rad" d="M446.2 118.4 L375.1 58.7"/><path class="rad" d="M451.0 114.4 L404.6 34.0"/><path class="rad" d="M456.9 112.3 L440.7 20.8"/><path class="rad" d="M463.1 112.3 L479.3 20.8"/><path class="rad" d="M469.0 114.4 L515.4 34.0"/><path class="rad" d="M473.8 118.4 L544.9 58.7"/><path class="rad" d="M476.9 123.8 L564.2 92.1"/><circle class="pzfill" cx="460" cy="130" r="58"/><circle class="holez" cx="460" cy="130" r="18"/><text class="lbl" x="460" y="134" text-anchor="middle">a</text><text class="lbl" x="502" y="90">r<tspan baseline-shift="sub" font-size="7">p</tspan></text><path class="arr" d="M480 130 H516 M510 126 l6 4 l-6 4"/></svg>
+        <ul class="scales">
+          <li><b>Global panel</b><span>Coarse, strictly linear-elastic mesh. One element per rivet is special.</span></li>
+          <li><b>Special element</b><span>Carries the closed-form plastic zone (radius r<sub>p</sub>) and its displacement field around the hole of radius a.</span></li>
+        </ul>
+        <figcaption>Schematic of my thesis: an analytical elasto-plastic solution for the hole expansion caused by a rivet is embedded in a plate element, which then hands the local plasticity to the global model as prescribed displacements.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <div class="body about">
+        <div>
+          <p>I am an M.S. student in Aeronautical and Mechanical Engineering at ITA, advised by Prof. Alfredo Rocha de Faria. My thesis develops a semi-analytical finite element method for the plastic deformation that riveting induces in aeronautical panels, with the aim of predicting residual stresses and panel distortion at a fraction of the cost of a nonlinear analysis.</p>
+          <p>I came to research from practice. Since 2013 I have worked at INGENIA, a São Paulo engineering firm where I am now a managing partner and technical director. I designed the elevated monorail stations of Metro Line 15-Silver, supervised the works of Line 17-Gold, and today I manage the independent technical verification of the Line 2-Green expansion, reviewing the structural calculations of stations, yards and deep foundations.</p>
+          <p>I am applying to Ph.D. programs for Fall 2027. I am interested in computational mechanics for structures shaped by how they are made: manufacturing-induced plasticity, structural optimization under fabrication constraints, and the finite element methods that connect the two.</p>
+        </div>
+        <div class="ph square"><span class="todo">Profile photo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="research">
+    <div class="wrap">
+      <h2>Research</h2>
+      <div class="body">
+        <article class="project">
+          <div class="figure-box" aria-hidden="true">
+            <svg viewBox="0 0 200 150">
+              <!-- stress vs radius sketch: hoop stress jump at r_p -->
+              <path class="g2" d="M24 126 H186 M24 126 V18"/>
+              <path class="g" d="M24 126 V40 H80"/>
+              <path class="g" d="M80 40 C100 40 120 60 186 86" stroke-dasharray="0"/>
+              <path class="g2" d="M80 40 V126" stroke-dasharray="3 3"/>
+              <circle class="f" cx="80" cy="40" r="2.6"/>
+              <text class="t" x="76" y="140">r<tspan font-size="7" baseline-shift="sub">p</tspan></text>
+              <text class="t" x="170" y="140">r</text>
+              <text class="t" x="8" y="22">σ</text>
+              <text class="t" x="110" y="36">plastic</text>
+              <text class="t" x="128" y="112">elastic</text>
+            </svg>
+          </div>
+          <div>
+            <h3>Semi-analytical finite element modeling of riveting-induced plasticity</h3>
+            <p class="meta">M.S. thesis, ITA, 2025 to 2027. Advisor: Alfredo Rocha de Faria.</p>
+            <p>A riveted joint leaves a small plastic zone around each hole, and a fuselage panel has thousands of them. Resolving every zone with a nonlinear model is too expensive for design. I derived a closed-form elasto-plastic solution for the hole expansion (von Mises yielding, Hollomon hardening) that gives the plastic radius and the displacement field, and formulated special plate elements with an embedded rivet that pass this local solution to a linear-elastic global mesh as prescribed displacements.</p>
+            <p>The elements are being implemented in the group's in-house finite element code and validated against full nonlinear analyses and experimental data, with application to the effect of riveting sequence on residual stresses and panel distortion.</p>
+          </div>
+        </article>
+        <article class="project">
+          <div class="ph"><span class="todo">Figure: pressure field or deformed airfoil</span></div>
+          <div>
+            <h3>Open-source CAD to CFD to FEM pipeline for airfoil loading</h3>
+            <p class="meta">With F. L. S. Bussamra, E. B. Ferreira and A. Rocha de Faria. Manuscript in preparation.</p>
+            <p>A fully open-source workflow for a NACA 0012 airfoil: structured mesh generation from CAD geometry, aerodynamic loading in OpenFOAM, and one-way transfer of the pressure field to a CalculiX structural model, validated against reference data.</p>
+          </div>
+        </article>
+        <article class="project">
+          <div class="ph"><span class="todo">Figure: floor mesh from EDUCASYS</span></div>
+          <div>
+            <h3>Finite element mesh generation for building floor systems</h3>
+            <p class="meta">Undergraduate research and B.S. thesis (EDUCASYS), IFSP, 2016 to 2018. Advisor: Edson Bispo Ferreira.</p>
+            <p>A CAD-based modeling interface with discretization modules in Fortran, Python and AutoLISP for the finite element analysis of multi-story floor systems. It grew out of an earlier CNPq fellowship (2013 to 2014) in which I wrote Java tools for beam internal forces and an image-based center-of-mass locator.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <h2>Work</h2>
+      <div class="body">
+        <ul class="work">
+          <li class="lead"><figure>
+            <div class="ph"><span class="todo">Photo: elevated monorail station, Line 15-Silver (e.g. São Mateus or Iguatemi)</span></div>
+            <figcaption><strong>Elevated monorail stations, Line 15-Silver</strong><span class="role">Structural designer, INGENIA for the São Paulo Metro, 2016 to 2018</span><span class="desc">Executive structural design and finite element modeling of the access buildings of Iguatemi Station and the external structures of São Mateus, Fazenda da Juta, Jardim Planalto, Sapopemba and Jardim Colonial stations, including 40 m steel pedestrian footbridges and 15 m cantilevered column corbels.</span></figcaption>
+          </figure></li>
+          <li><figure>
+            <div class="ph"><span class="todo">Photo: Line 2-Green station or yard under construction</span></div>
+            <figcaption><strong>Independent verification, Line 2-Green expansion</strong><span class="role">Contract manager, 2020 to present</span><span class="desc">Technical review of the structural calculations of Lots 2, 6, 7 and 8, Ponte Grande Station, Tamanduateí Yard and the Anália Franco substation: reinforced concrete, steel and deep foundations, including finite element models. Awarded Best and Largest Works 2024 by the Instituto de Engenharia.</span></figcaption>
+          </figure></li>
+          <li><figure>
+            <div class="ph"><span class="todo">Photo: TBM or NATM tunnel face, Line 2-Green</span></div>
+            <figcaption><strong>Supervision of underground works, Line 2-Green</strong><span class="role">Lots 1, 5 and 6, 2023 to present</span><span class="desc">Supervision of TBM and NATM tunnel excavation and underground stations for the São Paulo Metro.</span></figcaption>
+          </figure></li>
+          <li><figure>
+            <div class="ph"><span class="todo">Photo: Line 17-Gold monorail guideway</span></div>
+            <figcaption><strong>Monorail works, Line 17-Gold</strong><span class="role">Project coordinator, 2018 to 2020</span><span class="desc">Construction supervision of the monorail guideway and stations; earlier, review and approval of design documents for the Line 5-Lilac expansion.</span></figcaption>
+          </figure></li>
+          <li><figure>
+            <div class="ph"><span class="todo">Photo: BIM model audit or IFC checker screen</span></div>
+            <figcaption><strong>Automated BIM model verification</strong><span class="role">INGENIA, 2022 to present</span><span class="desc">IFC model auditing with buildingSMART IDS and Python (ifcopenshell), plus a web application for document review workflows, used on the Metro verification contracts.</span></figcaption>
+          </figure></li>
+          <li><figure>
+            <div class="ph"><span class="todo">Photo: Jacareí wastewater plant or pumping station</span></div>
+            <figcaption><strong>Water and sanitation structures</strong><span class="role">Structural designer, 2018 to 2020</span><span class="desc">Executive structural design for the Jacareí wastewater treatment plant expansion, a stormwater pumping station and underground drainage galleries under the federal PAC sanitation program.</span></figcaption>
+          </figure></li>
+          <li><figure>
+            <div class="ph"><span class="todo">Photo: rooftop PV array or the Vila Franca de Xira building</span></div>
+            <figcaption><strong>Buildings, rooftops and international projects</strong><span class="role">2019 to present</span><span class="desc">NBR 6123 wind loading and lifeline systems for rooftop photovoltaic installations on hospitals and schools; the extension block of the Santa Casa de Vila Franca de Xira, Portugal, delivered in BIM; and container-based laboratory facilities in Arizona, USA.</span></figcaption>
+          </figure></li>
+        </ul>
+        <p class="note">Photos should show public areas or previously published images; Metro construction sites usually carry disclosure restrictions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="publications">
+    <div class="wrap">
+      <h2>Publications</h2>
+      <div class="body">
+        <h4>Conference papers</h4>
+        <ul class="refs">
+          <li>Marques, D. S., <span class="me">Souza, W. S.</span>, Silva, C. C. (2026). Computational modeling of diaphragm walls via soil-structure interaction in Python and Matlab. <span class="venue">22nd COBRAMSEG, Brazilian Congress of Soil Mechanics and Geotechnical Engineering</span>. <span class="tag">Accepted.</span></li>
+          <li>Marques, D. S., <span class="me">Souza, W. S.</span>, Guimarães, A. L. A., Cardoso Jr., E. A., Silva, C. C. (2026). Application of network topological analysis to the evaluation of a proposed structuring axis for the East Zone of the São Paulo metro network. <span class="venue">AEAMESP, 32nd Metro-Railway Technology Week</span>, São Paulo. <span class="tag">Finalist, 13th Technology and Development Metro-Railway Award.</span></li>
+          <li>Marques, D. S., <span class="me">Souza, W. S.</span>, Silva, E. J. (2025). INSPECTUS: route optimization tool for rural aerodrome inspection using the Traveling Salesman Problem. <span class="venue">22nd SITRAER, Air Transportation Symposium</span>, Brasília.</li>
+        </ul>
+        <h4>Magazine articles</h4>
+        <ul class="refs">
+          <li>Silva, I. M., Kenchian, A., <span class="me">Souza, W. S.</span>, Siqueira, R. G. (2015). A proposal for the gateway of the city of Bonito-MS. <span class="venue">Concreto &amp; Construções</span>, 1, 142 to 150.</li>
+        </ul>
+        <h4>Invited talks</h4>
+        <ul class="refs">
+          <li><span class="me">Souza, W. S.</span>, Bucker, M. B. (2025). Evolution of São Paulo Metro construction works and challenges in structural design. <span class="venue">SEDICITEC, Science and Technology Week</span>, IFSP, São Paulo.</li>
+        </ul>
+        <h4>Conference presentations</h4>
+        <ul class="refs">
+          <li>Jazra, F. M., <span class="me">Souza, W. S.</span> (2013). Development of a didactic application for internal forces in simply supported planar beams. <span class="venue">5th CINTEC, Scientific Initiation Congress of the Federal Institute of São Paulo</span>, São João da Boa Vista.</li>
+        </ul>
+        <h4>Manuscripts in preparation</h4>
+        <ul class="refs">
+          <li><span class="me">Souza, W. S.</span>, Marques, D. S., Silva, E. J., Rocha de Faria, A. INSPECTUS: an intelligent decision support system for aerodrome inspection route optimization.</li>
+          <li><span class="me">Souza, W. S.</span>, Bussamra, F. L. S., Ferreira, E. B., Rocha de Faria, A. Open-source CAD-CFD-FEM pipeline for the aerodynamic loading of airfoils: structured mesh generation and validated one-way coupling.</li>
+          <li><span class="me">Souza, W. S.</span>, Marques, D. S. High school physics textbook (in Portuguese).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="teaching">
+    <div class="wrap">
+      <h2>Teaching and mentoring</h2>
+      <div class="body">
+        <ul class="rows">
+          <li><span>Volunteer physics teacher<span class="sub">Curso Comunitário Bonsucesso (CCB), a free college-prep course for students from low-income communities in São Paulo. Co-author of a high school physics textbook in preparation.</span></span><span class="when">2015 to present</span></li>
+          <li><span>Co-advisor, undergraduate final thesis<span class="sub">IFSP. A finite element processor for the plane-strain analysis of circular and oval tunnel cross-sections, benchmarked against PLAXIS. Student: Aislan Paes; advisor: Prof. Cátia C. Silva.</span></span><span class="when">2026</span></li>
+          <li><span>Instructor, short course<span class="sub">IFSP. Analysis of diaphragm walls via the finite difference method using Python and Matlab.</span></span><span class="when">2025</span></li>
+          <li><span>Volunteer, technical assistance program for low-income housing<span class="sub">IFSP, design team in partnership with an NGO, coordinated by Dr. Alexandre Kenchian.</span></span><span class="when">2016 to 2018</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="awards">
+    <div class="wrap">
+      <h2>Awards</h2>
+      <div class="body">
+        <ul class="rows">
+          <li><span>Alumni Who Inspire (<i>Egressos que Inspiram</i>), first edition<span class="sub">Civil Engineering Department, IFSP, at SEDICITEC</span></span><span class="when">2025</span></li>
+          <li><span>Best and Largest Works Award<span class="sub">Instituto de Engenharia. Line 2-Green expansion from Vila Prudente to Penha, São Paulo Metro.</span></span><span class="when">2024</span></li>
+          <li><span>Academic Honor Diploma<span class="sub">IFSP</span></span><span class="when">2015</span></li>
+          <li><span>First place, 8th Boldness (<i>Ousadia</i>) Design Competition<span class="sub">IBRACON, 58th Brazilian Concrete Congress</span></span><span class="when">2015</span></li>
+          <li><span>Undergraduate research fellowship, Young Talents for Science<span class="sub">CNPq</span></span><span class="when">2013 to 2014</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="media">
+    <div class="wrap">
+      <h2>Media</h2>
+      <div class="body">
+        <ul class="rows">
+          <li><span><a href="https://www.ifsp.edu.br/index.php/ultimas-noticias/5391-campus-sao-paulo-realiza-projeto-cafe-com-o-egresso">Campus São Paulo realiza projeto "Café com o Egresso"</a><span class="sub">IFSP. Coverage of the alumni program at which the Alumni Who Inspire award was presented.</span></span><span class="when"><span class="todo">2025</span></span></li>
+          <li><span><span class="todo">Add: coverage of the Instituto de Engenharia award or Metro works, with title, outlet and link</span></span><span class="when"></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="body">
+        <ul class="rows">
+          <li><span>M.S., Aeronautical and Mechanical Engineering, Aerospace Structures<span class="sub">Aeronautics Institute of Technology (ITA). Thesis: semi-analytical finite element modeling of riveting-induced plastic deformation in aeronautical structures.</span></span><span class="when">Expected 2027</span></li>
+          <li><span>Specialization in Project Management<span class="sub">Fundação Getulio Vargas (FGV)</span></span><span class="when">2022</span></li>
+          <li><span>B.S., Civil Engineering<span class="sub">Federal Institute of São Paulo (IFSP). Thesis: EDUCASYS, a finite element mesh generator for building floor systems.</span></span><span class="when">2018</span></li>
+          <li><span>Technical degree, Building Construction<span class="sub">Federal Institute of São Paulo (IFSP)</span></span><span class="when">2012</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Welber S. de Souza, São Paulo, Brazil</span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+</body></html>
